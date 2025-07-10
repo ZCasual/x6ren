@@ -77,7 +77,7 @@ def liuren(bazisizhu, ren, random_num):
     random_label = str(random_num)
     random_num %= 6  # 随机数
     ri = ren[0]
-    print(ri)
+    
     ri_num = di_zhi.index(ri) + random_num
     ri_num %= 6
     # 时
@@ -181,6 +181,10 @@ def liuren(bazisizhu, ren, random_num):
 
     json_output = json.dumps(palace_data, ensure_ascii=False, indent=2)
     print(json_output)
+
+    # 保存到文件
+    with open('liuren_output.json', 'w', encoding='utf-8') as f:
+        f.write(json_output)
 
     # 初始化主窗口
     root = tk.Tk()
