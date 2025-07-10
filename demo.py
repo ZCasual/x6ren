@@ -3,6 +3,7 @@ import pendulum
 import requests
 from bs4 import BeautifulSoup
 import tkinter as tk
+import json
 
 
 # 定义天干和地支列表
@@ -166,7 +167,20 @@ def liuren(bazisizhu, ren, random_num):
     del end_shi[end_ri_index]
     end_shi.insert((end_ri_index), end_ri + '(日)')
 
+    # 生成并输出JSON
+    palace_data = []
+    for i in range(len(gong)):
+        palace_info = {
+            "宫": gong[i],
+            "地支": end_shi[i].replace('\n', ' '),  # 清理换行符
+            "六亲": qin[i],
+            "六神": new_shen[i],
+            "星曜": new_xing[i]
+        }
+        palace_data.append(palace_info)
 
+    json_output = json.dumps(palace_data, ensure_ascii=False, indent=2)
+    print(json_output)
 
     # 初始化主窗口
     root = tk.Tk()
