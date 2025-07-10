@@ -17,6 +17,14 @@
 - **模块化设计**:
   - 各核心功能（如八字、节气计算）被封装在独立的模块中，便于维护与扩展。
 
+## 界面截图
+
+**时间选择界面:**
+![时间选择界面](https://gitee.com/casual_pleat/x6ren/raw/master/eg/eg1.png)
+
+**排盘结果展示:**
+![排盘结果](https://gitee.com/casual_pleat/x6ren/raw/master/eg/eg2.png)
+
 ## 文件说明
 - `users_x6ren.py`: **主程序**。包含图形用户界面，用于用户交互和展示小六壬排盘结果。
 - `bazi.py`: **八字计算模块**。根据`pendulum`日期对象，结合节气计算四柱。
